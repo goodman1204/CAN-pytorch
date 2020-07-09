@@ -7,6 +7,7 @@ import torch
 from sklearn.metrics import roc_auc_score, average_precision_score
 
 
+
 def load_data(dataset):
     # load the data: x, tx, allx, graph
     names = ['x', 'tx', 'allx', 'graph']
@@ -163,12 +164,15 @@ def sparse_mx_to_torch_sparse_tensor(sparse_mx):
     return torch.sparse.FloatTensor(indices, values, shape)
 
 
-def get_roc_score(emb, adj_orig, edges_pos, edges_neg):
+def get_roc_score(rec, adj_orig, edges_pos, edges_neg):
+
     def sigmoid(x):
+        x = np.clip(x, -500, 500)
         return 1 / (1 + np.exp(-x))
 
-    # Predict on test set of edges
-    adj_rec = np.dot(emb, emb.T)
+    # predict on test set of edges
+    # adj_rec = np.dot(emb_1, emb_2.t)
+    adj_rec = rec
     preds = []
     pos = []
     for e in edges_pos:
