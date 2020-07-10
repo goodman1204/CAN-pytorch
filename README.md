@@ -35,7 +35,7 @@ Test attr ROC score: 0.9578314765862058
 Test attr AP score: 0.9577498373032282
 ```
 
-#### CiteSeer dataset with the default parameter setttings  
+#### CiteSeer dataset with the default parameter settings  
 ```
 Epoch: 0198 train_loss= 0.81845 log_lik= 0.76834 KL= 0.05011 train_acc= 0.66264 val_edge_roc= 0.94756 val_edge_ap= 0.95467 val_attr_roc= 0.92974 val_attr_ap= 0.92059 time= 1.70837
 /Users/storen/anaconda3/lib/python3.7/site-packages/torch/nn/functional.py:1558: UserWarning: nn.functional.tanh is deprecated. Use torch.tanh instead.
@@ -45,4 +45,18 @@ Test edge ROC score: 0.9490130318561492
 Test edge AP score: 0.95856792990438
 Test attr ROC score: 0.9239066109625775
 Test attr AP score: 0.9121636661521142
+```
+
+#### Cora dataset with the default parameter settings 
+
+```
+Epoch: 0197 train_loss= 0.92730 log_lik= 0.85651 KL= 0.07079 train_acc= 0.64933 val_edge_roc= 0.98261 val_edge_ap= 0.97795 val_attr_roc= 0.89457 val_attr_ap= 0.88565 time= 0.85166
+Epoch: 0198 train_loss= 0.92594 log_lik= 0.85511 KL= 0.07083 train_acc= 0.65040 val_edge_roc= 0.98230 val_edge_ap= 0.97761 val_attr_roc= 0.89448 val_attr_ap= 0.88571 time= 0.82273
+Epoch: 0199 train_loss= 0.92517 log_lik= 0.85432 KL= 0.07085 train_acc= 0.65058 val_edge_roc= 0.98256 val_edge_ap= 0.97801 val_attr_roc= 0.89523 val_attr_ap= 0.88651 time= 0.81977
+Epoch: 0200 train_loss= 0.92596 log_lik= 0.85508 KL= 0.07088 train_acc= 0.64968 val_edge_roc= 0.98289 val_edge_ap= 0.97837 val_attr_roc= 0.89585 val_attr_ap= 0.88720 time= 0.90153
+Optimization Finished!
+Test edge ROC score: 0.983134251252218
+Test edge AP score: 0.9817151099782778
+Test attr ROC score: 0.895140476178776
+Test attr AP score: 0.8847338611264453
 ```
