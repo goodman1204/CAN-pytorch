@@ -1,9 +1,9 @@
 # CAN-pytorch
-PyTorch version for CAN: Co-embedding Attributed Networks based on <https://github.com/zfjsail/gae-pytorch>`https://github.com/zfjsail/gae-pytorch`
+PyTorch version for CAN: Co-embedding Attributed Networks based on <https://github.com/zfjsail/gae-pytorch>
 This is a PyTorch implementation of the CAN model described in the paper:
 
 >Zaiqiao Meng, Shangsong Liang, Hongyan Bao, Xiangliang Zhang. Co-embedding Attributed Networks. (WSDM2019)
->https://github.com/mengzaiqiao/CAN 
+><https://github.com/mengzaiqiao/CAN> 
 
 
 ### Requirements
