@@ -1,19 +1,19 @@
 # gae-pytorch
-Graph Auto-Encoder in PyTorch
+PyTorch version for CAN: Co-embedding Attributed Networks based on <https://github.com/zfjsail/gae-pytorch>`https://github.com/zfjsail/gae-pytorch`
+This is a PyTorch implementation of the CAN model described in the paper:
 
-This is a PyTorch implementation of the Variational Graph Auto-Encoder model described in the paper:
- 
-T. N. Kipf, M. Welling, [Variational Graph Auto-Encoders](https://arxiv.org/abs/1611.07308), NIPS Workshop on Bayesian Deep Learning (2016)
+>Zaiqiao Meng, Shangsong Liang, Hongyan Bao, Xiangliang Zhang. Co-embedding Attributed Networks. (WSDM2019)
+>https://github.com/mengzaiqiao/CAN 
 
-The code in this repo is based on or refers to https://github.com/tkipf/gae, https://github.com/tkipf/pygcn and https://github.com/vmasrani/gae_in_pytorch.
 
 ### Requirements
 - Python 3
-- PyTorch 0.4
+- PyTorch 1.5.0
 - install requirements via ```
 pip install -r requirements.txt``` 
 
 ### How to run
-```bash
-python gae/train.py
+```
+cd gae
+python train.py
 ```
