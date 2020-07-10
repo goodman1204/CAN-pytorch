@@ -1,4 +1,4 @@
-# gae-pytorch
+# CAN-pytorch
 PyTorch version for CAN: Co-embedding Attributed Networks based on <https://github.com/zfjsail/gae-pytorch>`https://github.com/zfjsail/gae-pytorch`
 This is a PyTorch implementation of the CAN model described in the paper:
 
