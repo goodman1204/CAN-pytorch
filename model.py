@@ -66,7 +66,8 @@ class InnerDecoder(nn.Module):
 
     def forward(self,inputs):
         z_u, z_a = inputs
-        z = F.dropout(z_u, self.dropout, training=self.training)
+        z_u = F.dropout(z_u, self.dropout, training=self.training)
+        z_a = F.dropout(z_a, self.dropout,training = self.training)
         adj = self.act(torch.mm(z_u, z_u.t()))
         features = self.act(torch.mm(z_u,z_a.t()))
         return adj,features

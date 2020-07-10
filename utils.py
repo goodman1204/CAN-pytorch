@@ -171,7 +171,6 @@ def get_roc_score(rec, adj_orig, edges_pos, edges_neg):
         return 1 / (1 + np.exp(-x))
 
     # predict on test set of edges
-    # adj_rec = np.dot(emb_1, emb_2.t)
     adj_rec = rec
     preds = []
     pos = []

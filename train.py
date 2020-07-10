@@ -62,17 +62,15 @@ def gae_for(args):
 
     pos_weight_a = torch.tensor(float(features[2][0] * features[2][1] - len(features[1])) / len(features[1]))
     norm_a = features[2][0] * features[2][1] / float((features[2][0] * features[2][1] - len(features[1])) * 2)
-    # pos_weight_a = float(features.shape[0] * features.shape[1] - features.sum()) / features.sum()
-    # norm_a = features.shape[0] * features.shape[1] / float((features.shape[0] * features.shape[1] - features.sum()) * 2)
 
     features_training = sparse_mx_to_torch_sparse_tensor(features_orig)
-    # features_training = torch.sparse.FloatTensor(torch.tensor(features[0]),torch.tensor(features[1]),torch.Size(features[2]))
 
     model = GCNModelVAE(n_features,n_nodes, args.hidden1, args.hidden2, args.dropout)
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
 
 
-    hidden_emb = None
+    hidden_emb_u = None
+    hidden_emb_a = None
 
     cost_val = []
     acc_val = []
@@ -98,9 +96,10 @@ def gae_for(args):
 
         accuracy = torch.mean(correct_prediction_u) + torch.mean(correct_prediction_a)
 
-        # hidden_emb = mu.data.numpy()
-        roc_curr, ap_curr = get_roc_score(recovered_u.data.numpy(), adj_orig, val_edges, val_edges_false)
-        roc_curr_a, ap_curr_a = get_roc_score(recovered_a.data.numpy(), features_orig, val_feas, val_feas_false)
+        hidden_emb_u = mu_u.data.numpy()
+        hidden_emb_a = mu_a.data.numpy()
+        roc_curr, ap_curr = get_roc_score(np.dot(hidden_emb_u,hidden_emb_u.T), adj_orig, val_edges, val_edges_false)
+        roc_curr_a, ap_curr_a = get_roc_score(np.dot(hidden_emb_u,hidden_emb_a.T), features_orig, val_feas, val_feas_false)
 
         val_roc_score.append(roc_curr)
 
@@ -121,8 +120,9 @@ def gae_for(args):
     np.save(embedding_node_var_result_file, logvar_u.data.numpy())
     np.save(embedding_attr_var_result_file, logvar_a.data.numpy())
 
-    roc_score, ap_score = get_roc_score(recovered_u.data.numpy(), adj_orig, test_edges, test_edges_false)
-    roc_score_a, ap_score_a = get_roc_score(recovered_a.data.numpy(), features_orig, test_feas, test_feas_false)
+    roc_score, ap_score = get_roc_score(np.dot(hidden_emb_u,hidden_emb_u.T), adj_orig, test_edges, test_edges_false)
+    roc_score_a, ap_score_a = get_roc_score(np.dot(hidden_emb_u,hidden_emb_a.T), features_orig, test_feas, test_feas_false)
+
     print('Test edge ROC score: ' + str(roc_score))
     print('Test edge AP score: ' + str(ap_score))
     print('Test attr ROC score: ' + str(roc_score_a))
@@ -133,8 +133,8 @@ def parse_args():
     parser.add_argument('--model', type=str, default='gcn_vae', help="models used")
     parser.add_argument('--seed', type=int, default=42, help='Random seed.')
     parser.add_argument('--epochs', type=int, default=200, help='Number of epochs to train.')
-    parser.add_argument('--hidden1', type=int, default=32, help='Number of units in hidden layer 1.')
-    parser.add_argument('--hidden2', type=int, default=16, help='Number of units in hidden layer 2.')
+    parser.add_argument('--hidden1', type=int, default=64, help='Number of units in hidden layer 1.')
+    parser.add_argument('--hidden2', type=int, default=32, help='Number of units in hidden layer 2.')
     parser.add_argument('--lr', type=float, default=0.01, help='Initial learning rate.')
     parser.add_argument('--dropout', type=float, default=0., help='Dropout rate (1 - keep probability).')
     parser.add_argument('--dataset-str', type=str, default='cora', help='type of dataset.')
