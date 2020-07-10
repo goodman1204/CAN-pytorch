@@ -10,16 +10,18 @@ PyTorch version for CAN: Co-embedding Attributed Networks based on code <https:/
 - install requirements via 
 
 ```
-pip install -r requirements.txt``` 
+pip install -r requirements.txt
+``` 
 
 ### How to run
+
 ```
 python train.py
 ```
 
 
-### Result 
 #### Facebook dataset with the default parameter settings
+
 ```
 Epoch: 0194 train_loss= 0.75375 log_lik= 0.69382 KL= 0.05993 train_acc= 0.73382 val_edge_roc= 0.98516 val_edge_ap= 0.98455 val_attr_roc= 0.95473 val_attr_ap= 0.95721 time= 1.71142
 Epoch: 0195 train_loss= 0.75215 log_lik= 0.69217 KL= 0.05998 train_acc= 0.73484 val_edge_roc= 0.98577 val_edge_ap= 0.98492 val_attr_roc= 0.95465 val_attr_ap= 0.95746 time= 1.64731
@@ -48,9 +50,8 @@ Test attr AP score: 0.9121636661521142
 ```
 
 #### Cora dataset with the default parameter settings 
-
 ```
-Epoch: 0197 train_loss= 0.92730 log_lik= 0.85651 KL= 0.07079 train_acc= 0.64933 val_edge_roc= 0.98261 val_edge_ap= 0.97795 val_attr_roc= 0.89457 val_attr_ap= 0.88565 time= 0.85166
+Epoch: 0197 train_loss= 0.92730 log_lik= 0.85651 KL= 0.07079 train_acc= 0.64933 val_edge_roc= 0.98261 val_edge_ap= 0.97795 val_attr_roc= 0.89457 val_attr_ap= 0.88565 time= 0.85166  
 Epoch: 0198 train_loss= 0.92594 log_lik= 0.85511 KL= 0.07083 train_acc= 0.65040 val_edge_roc= 0.98230 val_edge_ap= 0.97761 val_attr_roc= 0.89448 val_attr_ap= 0.88571 time= 0.82273
 Epoch: 0199 train_loss= 0.92517 log_lik= 0.85432 KL= 0.07085 train_acc= 0.65058 val_edge_roc= 0.98256 val_edge_ap= 0.97801 val_attr_roc= 0.89523 val_attr_ap= 0.88651 time= 0.81977
 Epoch: 0200 train_loss= 0.92596 log_lik= 0.85508 KL= 0.07088 train_acc= 0.64968 val_edge_roc= 0.98289 val_edge_ap= 0.97837 val_attr_roc= 0.89585 val_attr_ap= 0.88720 time= 0.90153
