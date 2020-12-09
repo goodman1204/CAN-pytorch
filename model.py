@@ -15,7 +15,7 @@ class GCNModelVAE(nn.Module):
         self.dc = InnerDecoder(dropout, act=lambda x: x)
 
         #for embedding attributes/features
-        self.linear_a1= Linear(n_nodes, hidden_dim1, act = F.tanh,sparse_inputs=True) # the input dim is the number of nodes
+        self.linear_a1= Linear(n_nodes, hidden_dim1, act = torch.tanh,sparse_inputs=True) # the input dim is the number of nodes
         self.linear_a2= Linear(hidden_dim1, hidden_dim2, act = lambda x:x)
         self.linear_a3= Linear(hidden_dim1, hidden_dim2, act = lambda x:x)
 

@@ -105,8 +105,10 @@ def gae_for(args):
 
         print("Epoch:", '%04d' % (epoch + 1),
               "train_loss=", "{:.5f}".format(cur_loss),
-              "log_lik=", "{:.5f}".format(cost_u.item()+cost_a.item()),
-              "KL=", "{:.5f}".format(KLD_u.item()+KLD_a.item()),
+              "log_lik_u=", "{:.5f}".format(cost_u.item()),
+              "log_lik_a=", "{:.5f}".format(cost_a.item()),
+              "KL_u=", "{:.5f}".format(KLD_u.item()),
+              "KL_a=", "{:.5f}".format(KLD_a.item()),
               "train_acc=", "{:.5f}".format(accuracy.item()/2),
               "val_edge_roc=", "{:.5f}".format(val_roc_score[-1]),
               "val_edge_ap=", "{:.5f}".format(ap_curr),
