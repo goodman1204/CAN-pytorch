@@ -51,13 +51,19 @@ Test attr AP score: 0.9121636661521142
 
 #### Cora dataset with the default parameter settings 
 ```
-Epoch: 0197 train_loss= 0.92730 log_lik= 0.85651 KL= 0.07079 train_acc= 0.64933 val_edge_roc= 0.98261 val_edge_ap= 0.97795 val_attr_roc= 0.89457 val_attr_ap= 0.88565 time= 0.85166  
-Epoch: 0198 train_loss= 0.92594 log_lik= 0.85511 KL= 0.07083 train_acc= 0.65040 val_edge_roc= 0.98230 val_edge_ap= 0.97761 val_attr_roc= 0.89448 val_attr_ap= 0.88571 time= 0.82273
-Epoch: 0199 train_loss= 0.92517 log_lik= 0.85432 KL= 0.07085 train_acc= 0.65058 val_edge_roc= 0.98256 val_edge_ap= 0.97801 val_attr_roc= 0.89523 val_attr_ap= 0.88651 time= 0.81977
-Epoch: 0200 train_loss= 0.92596 log_lik= 0.85508 KL= 0.07088 train_acc= 0.64968 val_edge_roc= 0.98289 val_edge_ap= 0.97837 val_attr_roc= 0.89585 val_attr_ap= 0.88720 time= 0.90153
+9027 val_attr_roc= 0.93274 val_attr_ap= 0.91553 time= 0.38018
+Epoch: 0192 train_loss= 0.84325 log_lik= 0.76477 KL= 0.07848 train_acc= 0.64674 val_edge_roc= 0.98919 val_edge_ap= 0.99029 val_attr_roc= 0.93418 val_attr_ap= 0.91732 time= 0.36496
+Epoch: 0193 train_loss= 0.84597 log_lik= 0.76714 KL= 0.07883 train_acc= 0.65462 val_edge_roc= 0.98916 val_edge_ap= 0.99043 val_attr_roc= 0.93214 val_attr_ap= 0.91432 time= 0.36390
+Epoch: 0194 train_loss= 0.84857 log_lik= 0.77013 KL= 0.07844 train_acc= 0.64059 val_edge_roc= 0.98945 val_edge_ap= 0.99055 val_attr_roc= 0.93397 val_attr_ap= 0.91702 time= 0.38282
+Epoch: 0195 train_loss= 0.85211 log_lik= 0.77336 KL= 0.07875 train_acc= 0.65224 val_edge_roc= 0.98910 val_edge_ap= 0.99032 val_attr_roc= 0.93098 val_attr_ap= 0.91294 time= 0.36883
+Epoch: 0196 train_loss= 0.84762 log_lik= 0.76950 KL= 0.07812 train_acc= 0.64099 val_edge_roc= 0.98931 val_edge_ap= 0.99041 val_attr_roc= 0.93387 val_attr_ap= 0.91710 time= 0.36784
+Epoch: 0197 train_loss= 0.84100 log_lik= 0.76280 KL= 0.07819 train_acc= 0.65151 val_edge_roc= 0.98937 val_edge_ap= 0.99063 val_attr_roc= 0.93326 val_attr_ap= 0.91600 time= 0.35659
+Epoch: 0198 train_loss= 0.83551 log_lik= 0.75756 KL= 0.07795 train_acc= 0.65085 val_edge_roc= 0.98941 val_edge_ap= 0.99061 val_attr_roc= 0.93529 val_attr_ap= 0.91857 time= 0.36861
+Epoch: 0199 train_loss= 0.83763 log_lik= 0.75975 KL= 0.07788 train_acc= 0.64954 val_edge_roc= 0.98940 val_edge_ap= 0.99060 val_attr_roc= 0.93542 val_attr_ap= 0.91888 time= 0.36662
+Epoch: 0200 train_loss= 0.83960 log_lik= 0.76150 KL= 0.07810 train_acc= 0.65307 val_edge_roc= 0.98948 val_edge_ap= 0.99075 val_attr_roc= 0.93391 val_attr_ap= 0.91660 time= 0.37454
 Optimization Finished!
-Test edge ROC score: 0.983134251252218
-Test edge AP score: 0.9817151099782778
-Test attr ROC score: 0.895140476178776
-Test attr AP score: 0.8847338611264453
+Test edge ROC score: 0.9890442712427842
+Test edge AP score: 0.9865145173317201
+Test attr ROC score: 0.9420356776264327
+Test attr AP score: 0.9279907464117463
 ```

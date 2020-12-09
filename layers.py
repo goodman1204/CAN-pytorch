@@ -93,7 +93,7 @@ class Linear(Module):
             output = torch.mm(input,self.weight)
 
         if self.bias:
-            output += self.bias
+            output += self.weight_bias
 
         return self.act(output)
 
