@@ -94,7 +94,9 @@ def gae_for(args):
         correct_prediction_u = ((torch.sigmoid(recovered_u)>=0.5).type(torch.LongTensor)==adj_label.type(torch.LongTensor)).type(torch.FloatTensor)
         correct_prediction_a = ((torch.sigmoid(recovered_a)>=0.5).type(torch.LongTensor)==features_label.type(torch.LongTensor)).type(torch.FloatTensor)
 
-        accuracy = torch.mean(correct_prediction_u) + torch.mean(correct_prediction_a)
+        # accuracy = torch.mean(correct_prediction_u) + torch.mean(correct_prediction_a)
+        accuracy_u = torch.mean(correct_prediction_u)
+        accuracy_a = torch.mean(correct_prediction_a)
 
         hidden_emb_u = mu_u.data.numpy()
         hidden_emb_a = mu_a.data.numpy()
@@ -109,7 +111,8 @@ def gae_for(args):
               "log_lik_a=", "{:.5f}".format(cost_a.item()),
               "KL_u=", "{:.5f}".format(KLD_u.item()),
               "KL_a=", "{:.5f}".format(KLD_a.item()),
-              "train_acc=", "{:.5f}".format(accuracy.item()/2),
+              "train_acc_u=", "{:.5f}".format(accuracy_u.item()),
+              "train_acc_a=", "{:.5f}".format(accuracy_a.item()),
               "val_edge_roc=", "{:.5f}".format(val_roc_score[-1]),
               "val_edge_ap=", "{:.5f}".format(ap_curr),
               "val_attr_roc=", "{:.5f}".format(roc_curr_a),
